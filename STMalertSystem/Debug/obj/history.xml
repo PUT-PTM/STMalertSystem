@@ -1,0 +1,29 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<history>
+   <processor signature="arm-none-eabi-gcc noversion nomachine -mcpu=cortex-m4 -mthumb -Wall -ffunction-sections -g -O0 -c -DSTM32F407VG -DSTM32F4XX -DUSE_STDPERIPH_DRIVER -D__ASSEMBLY__ -I..\..\..\..\..\Program Files\Git\STMalertSystem\cmsis_lib -I..\..\..\..\..\Program Files\Git\STMalertSystem\cmsis_boot -I..\..\..\..\..\Program Files\Git\STMalertSystem\cmsis -I..\..\..\..\..\Program Files\Git -I..\..\..\..\..\Program Files\Git\STMalertSystem\cmsis_lib\include -I..\..\..\..\..\Program Files\Git\STMalertSystem">
+      <target file="stm32f4xx_dac.o" lastModified="153f2cbf6eb">
+         <source file="..\..\..\cmsis_lib\source\stm32f4xx_dac.c" lastModified="153f2cbdf0c"/>
+      </target>
+      <target file="stm32f4xx_rcc.o" lastModified="153f2cbfe3c">
+         <source file="..\..\..\cmsis_lib\source\stm32f4xx_rcc.c" lastModified="153f2c97f30"/>
+      </target>
+      <target file="system_stm32f4xx.o" lastModified="153f2cc0560">
+         <source file="..\..\..\cmsis_boot\system_stm32f4xx.c" lastModified="153f2c97f1f"/>
+      </target>
+      <target file="stm32f4xx_gpio.o" lastModified="153f2cc0310">
+         <source file="..\..\..\cmsis_lib\source\stm32f4xx_gpio.c" lastModified="153f2c97f2d"/>
+      </target>
+      <target file="stm32f4xx_rtc.o" lastModified="153f2cc0801">
+         <source file="..\..\..\cmsis_lib\source\stm32f4xx_rtc.c" lastModified="153f2cbb168"/>
+      </target>
+      <target file="stm32f4xx_adc.o" lastModified="153f2cc00b3">
+         <source file="..\..\..\cmsis_lib\source\stm32f4xx_adc.c" lastModified="153f2cbc944"/>
+      </target>
+      <target file="main.o" lastModified="153f2cca527">
+         <source file="..\..\..\main.c" lastModified="153f2cc99b2"/>
+      </target>
+      <target file="startup_stm32f4xx.o" lastModified="153f2cbf927">
+         <source file="..\..\..\cmsis_boot\startup\startup_stm32f4xx.c" lastModified="153f2c97f12"/>
+      </target>
+   </processor>
+</history>
