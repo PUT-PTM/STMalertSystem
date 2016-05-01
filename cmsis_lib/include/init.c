@@ -103,6 +103,7 @@ void rcc()
 	RCC_AHB1PeriphClockCmd(RCC_AHB1Periph_GPIOC, ENABLE);
 	RCC_APB1PeriphClockCmd(RCC_APB1Periph_DAC, ENABLE); //DAC
 	RCC_APB2PeriphClockCmd(RCC_APB2Periph_ADC1, ENABLE); //ADC
+	RCC_APB1PeriphClockCmd(RCC_APB1Periph_TIM2, ENABLE); // tim5
 }
 
 void gpio()
@@ -130,4 +131,16 @@ void gpio()
 	GPIO_InitStructure.GPIO_Speed = GPIO_Speed_100MHz;
 	GPIO_InitStructure.GPIO_PuPd = GPIO_PuPd_NOPULL;
 	GPIO_Init(GPIOC, &GPIO_InitStructure);
+}
+
+void tim()
+{
+	// tim2(84Mhz), Freload=100Hz
+	TIM_TimeBaseInitTypeDef TIM_TimeBaseStructure;
+	TIM_TimeBaseStructure.TIM_Period = 99;
+	TIM_TimeBaseStructure.TIM_Prescaler = 8400-1;
+	TIM_TimeBaseStructure.TIM_ClockDivision = TIM_CKD_DIV1;
+	TIM_TimeBaseStructure.TIM_CounterMode =  TIM_CounterMode_Up;
+	TIM_TimeBaseInit(TIM2, &TIM_TimeBaseStructure);
+	TIM_Cmd(TIM2, ENABLE);
 }

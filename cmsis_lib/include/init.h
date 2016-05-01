@@ -13,3 +13,4 @@ void MY_DAC_init(void);
 void MY_DAC_initTimerForUpdating(void);
 void rcc();
 void gpio();
+void tim();
