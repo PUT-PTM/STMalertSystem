@@ -20,6 +20,7 @@ int main(void) {
 	int i;
 
 	while (1) {
+		//Wysyłanie komunikatów w trakcie pracy
 		uint8_t theByte;
 		if (VCP_get_char(&theByte)) {
 			send_byte(theByte);
@@ -30,13 +31,15 @@ int main(void) {
 			for (i = 0; i < 1000000; i++)
 				;
 		}
-
+		//Uzbrajanie alaramu
 		if (decision == 1) {
+			//Status włączonego alarmu
 			GPIO_SetBits(GPIOD, GPIO_Pin_14);
 
 			if (TIM_GetFlagStatus(TIM2, TIM_FLAG_Update)) {
 				while (GPIO_ReadInputDataBit(GPIOC, GPIO_Pin_7) == 1) //jezeli bit na PC7=1 -> pomarczowa dioda
 				{
+					//Wyślij komunikat do ESP
 					if (x == 0) {
 						send_string("AT+CIPSEND=0,1\r\n");
 						for (i = 0; i < 1000000; i++)
@@ -74,6 +77,7 @@ int main(void) {
 				x = 0;
 			}
 		}
+		//Rozbrajanie alarmu
 		if (decision == 0) {
 			GPIO_ResetBits(GPIOD, GPIO_Pin_14);
 		}
